@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@400;500;600;700&family=Roboto+Slab&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,400&display=swap');;
+/* @import "react-alice-carousel/lib/alice-carousel.css"; */
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+.header{
+    /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7I9FdabVyh9H25W8QFd5vNks5RWikZrt0YA&usqp=CAU'); */
+    text-transform: uppercase;
+    filter:opacity();
+    object-fit:cover;
+    
+    background-repeat: no-repeat;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat",sans-serif ;
+    font-size: 5vw;
+    cursor: pointer;
+    background-color: #1A1A40;
+    color: #ffff;
+    padding-bottom: 15px;
+    align-content: center;
+    position: fixed;
+    box-shadow: 0 1px 15px #8758ff;
+    z-index: 100;
+    transition: 0.3s ease-in-out;
+    
+}
+/* .header:hover{
+    background-color: #8758ff;
+    font-weight: 700;
+    color: #1A1A40;
+    
+} */
+
+@media all and (max-width:1000px){
+    .header{
+        padding-top: 15px;
+        font-size: 6.2vw;
+       
+    }
+}
