@@ -11,7 +11,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import "../Components/SingleContent/SingleContent.css";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import './ContentModal.css'
+import "./ContentModal.css";
 import {
   img_300,
   img_500,
@@ -31,7 +31,7 @@ const style = {
   height: "80%",
   border: "none",
   bgcolor: "#1A1A40",
-  boxShadow: "10px 10px 15px #8758ff",
+  // boxShadow: "10px 10px 15px #8758ff",
   color: "white",
   p: 4,
 };
@@ -48,7 +48,7 @@ export default function ContentModal({ children, id, media_type }) {
   const fetchData = async () => {
     const { data } = await axios.get(Url);
     setContent(data);
-    content && console.log(content);
+    // content && console.log(content);
   };
   const vidUrl = `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${api_key}&language=en-US`;
   const fetchVideo = async () => {
@@ -79,7 +79,7 @@ export default function ContentModal({ children, id, media_type }) {
         }}
       >
         <Fade in={open}>
-          <Box sx={style}>
+          <Box className='mobileWidth' sx={style}>
             {content && (
               <div className="contentModal">
                 <img
@@ -101,9 +101,8 @@ export default function ContentModal({ children, id, media_type }) {
                   className="contentModal_landscape"
                 />
                 <div className="contentModal_about">
-                  
                   <span className="content_title">
-                    {content.title || content.name} (
+                    {(content.title || content.name)} (
                     {(
                       content.first_air_date ||
                       content.release_date ||
@@ -112,17 +111,22 @@ export default function ContentModal({ children, id, media_type }) {
                     )
                   </span>
                   {content.tagline && (
-                      <i className="tagline">{content.tagline}</i>
-                    )}
+                    <i className="tagline">{content.tagline}</i>
+                  )}
 
                   <span className="contentModel_discrption">
                     {content.overview && content.overview}
                   </span>
-                  
+
                   <div>
                     <Carousel media_type={media_type} id={content.id} />
                   </div>
-                  <Button variant="contained" startIcon={<YouTubeIcon />} href={`https://www.youtube.com/watch?v=${video}`} target="_blank" >
+                  <Button
+                    variant="contained"
+                    startIcon={<YouTubeIcon />}
+                    href={`https://www.youtube.com/watch?v=${video}`}
+                    target="_blank"
+                  >
                     Watch the trailer!
                   </Button>
                 </div>

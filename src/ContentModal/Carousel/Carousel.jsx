@@ -14,9 +14,10 @@ const handleDragStart = (e) => e.preventDefault();
 // ];
 
 const Carousel = ({ media_type, id }) => {
+  const [castName,setCastName]=useState(null)
   const responsive = {
-    0: {
-      items: 3
+    200: {
+      items: 3 
     },
     512: {
       items: 7
@@ -31,7 +32,12 @@ const Carousel = ({ media_type, id }) => {
   const [credits, setCredits] = useState([]);
   const fetchCredits = async () => {
     const { data } = await axios.get(Url);
-    setCredits(data.cast);
+    if(data.cast.length >2){
+    setCredits(data.cast)}
+    else{
+      // console.log(data.cast.length);
+      setCastName(data.cast)
+    }
   };
   const items = Object.values(credits)?.map((c) => {
     return (
@@ -45,12 +51,15 @@ const Carousel = ({ media_type, id }) => {
       </div>
     );
   });
+  const itemsName=castName?.map((c)=>{
+    return(<p>{c?.name}</p>)
+  })
   useEffect(() => {
     fetchCredits();
   }, []);
 
   return (
-    <AliceCarousel
+    items && (<AliceCarousel
       autoPlay
       infinite
       responsive={responsive}
@@ -58,7 +67,8 @@ const Carousel = ({ media_type, id }) => {
       items={items}
       disableButtonsControls
       disableDotsControls
-    />
-  );
+    />)
+  )
+  
 };
 export default Carousel;

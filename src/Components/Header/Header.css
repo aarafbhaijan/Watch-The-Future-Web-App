@@ -6,6 +6,12 @@ body{
     padding: 0;
     
 }
+.logoHeader{
+    height: 6.2vw;
+    padding: 10px 0;
+}.header:hover{
+    color: #8758ff;
+}
 .header{
     /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7I9FdabVyh9H25W8QFd5vNks5RWikZrt0YA&usqp=CAU'); */
     text-transform: uppercase;
@@ -36,10 +42,25 @@ body{
     
 } */
 
-@media all and (max-width:1000px){
+@media all and (max-width:450px){
     .header{
         padding-top: 15px;
         font-size: 6.2vw;
        
+    }
+    .logoHeader{
+        height: 6.2vw;
+        padding:0 0 10px 0 ;
+    }
+}
+@media all and (max-width:1000px) {
+    .header{
+        padding-top: 15px;
+        font-size: 6.2vw;
+       
+    }
+    .logoHeader{
+        height: 6.2vw;
+        padding:3px 0 10px 0 ;
     }
 }

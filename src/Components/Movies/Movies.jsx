@@ -4,6 +4,7 @@ import SingleContent from "../SingleContent/SingleContent.jsx";
 import Genres from "../Genres/Genres.jsx";
 import useGenre from "../../Hooks/useGenre.jsx";
 
+
 import "../SingleContent/SingleContent.css";
 
 import "./Movies.css";
