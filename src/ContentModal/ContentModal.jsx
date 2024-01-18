@@ -28,7 +28,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "90%",
-  height: "80%",
+  height: "90%",
   border: "none",
   bgcolor: "#1A1A40",
   // boxShadow: "10px 10px 15px #8758ff",
@@ -79,7 +79,7 @@ export default function ContentModal({ children, id, media_type }) {
         }}
       >
         <Fade in={open}>
-          <Box className='mobileWidth' sx={style}>
+          <Box className="mobileWidth" sx={style}>
             {content && (
               <div className="contentModal">
                 <img
@@ -102,7 +102,7 @@ export default function ContentModal({ children, id, media_type }) {
                 />
                 <div className="contentModal_about">
                   <span className="content_title">
-                    {(content.title || content.name)} (
+                    {content.title || content.name} (
                     {(
                       content.first_air_date ||
                       content.release_date ||
@@ -121,6 +121,13 @@ export default function ContentModal({ children, id, media_type }) {
                   <div>
                     <Carousel media_type={media_type} id={content.id} />
                   </div>
+
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video}`}
+                    title="YoutubeVideo"
+                    frameborder="0"
+                    allowFullScreen
+                  ></iframe>
                   <Button
                     variant="contained"
                     startIcon={<YouTubeIcon />}

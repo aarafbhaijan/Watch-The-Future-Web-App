@@ -14,7 +14,7 @@ import CustomPagination from "../CustomPagination/CustomPagination.jsx";
 const Movies = () => {
   const api_key = "f3ffd8d11a71057c55ed885f5cfe4edb";
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1); 
 
   const [content, setContent] = useState([]);
   const [numberOfPages, setNumberOfPages] = useState(1);
