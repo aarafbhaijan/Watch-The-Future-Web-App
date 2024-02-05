@@ -123,6 +123,8 @@ export default function ContentModal({ children, id, media_type }) {
                   </div>
 
                   <iframe
+                    className="youtube"
+                    style={{}}
                     src={`https://www.youtube.com/embed/${video}`}
                     title="YoutubeVideo"
                     frameborder="0"

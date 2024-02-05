@@ -39,7 +39,9 @@ const Search = () => {
 
     try{setContent(data.results);
     setNumberOfPages(data.total_pages);
-    console.log(type);}catch{
+    // console.log(type)
+  }
+    catch{
       setError(data.error.message)
     }
    };
